@@ -1,75 +1,520 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover exciting things to do around Nairobi every weekend.">
-  <title>Weekend 254 | Make the weekend count</title>
-  <style>
-    :root{--navy:#10152b;--lime:#c7f464;--orange:#ff784f;--purple:#7867f5;--paper:#f7f7f2;--ink:#171a2d}
-    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink)}
-    header{background:var(--navy);color:white;padding:22px max(5vw,20px) 70px}
-    nav{display:flex;justify-content:space-between;align-items:center;max-width:1100px;margin:auto}
-    .brand{font-weight:900;font-size:1.35rem;letter-spacing:.04em}.brand span{color:var(--lime)}
-    .tag{border:1px solid #ffffff55;border-radius:99px;padding:8px 13px;font-size:.8rem}
-    .hero{max-width:1100px;margin:55px auto 0;display:grid;grid-template-columns:1.4fr .8fr;gap:30px;align-items:center}
-    h1{font-size:clamp(2.7rem,7vw,5.8rem);line-height:.94;letter-spacing:-.06em;margin:0 0 20px}
-    h1 em{font-style:normal;color:var(--lime)}.hero p{color:#d6d8e3;line-height:1.6;max-width:560px}
-    .hero-art{background:var(--orange);border-radius:28px;padding:28px;min-height:230px;display:flex;flex-direction:column;justify-content:space-between;transform:rotate(2deg);color:var(--navy)}
-    .hero-art strong{font-size:2.5rem;line-height:.95;letter-spacing:-.05em}.hero-art span{font-weight:bold}
-    main{max-width:1100px;margin:-28px auto 70px;padding:0 20px;position:relative}
-    .toolbar{background:white;border-radius:18px;padding:16px;display:flex;gap:12px;flex-wrap:wrap;box-shadow:0 10px 35px #10152b12}
-    input,select{font:inherit;border:1px solid #ddd;border-radius:10px;padding:12px;background:white;min-width:180px;flex:1}
-    .section-head{display:flex;justify-content:space-between;align-items:end;gap:15px;margin:48px 0 18px}
-    h2{font-size:2rem;margin:0;letter-spacing:-.04em}.muted{color:#6d7080;font-size:.92rem}
-    .notice{background:#fff4dc;border-left:4px solid #e5a329;padding:13px 15px;border-radius:8px;margin:18px 0;color:#684b16;font-size:.9rem}
-    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
-    .card{background:white;border-radius:18px;overflow:hidden;border:1px solid #ececf0}
-    .visual{height:150px;padding:18px;display:flex;align-items:end;font-size:1.4rem;font-weight:900;color:var(--navy)}
-    .v1{background:linear-gradient(135deg,#c7f464,#9dd5a1)}.v2{background:linear-gradient(135deg,#ffb08c,#ff784f)}.v3{background:linear-gradient(135deg,#bdb5ff,#7867f5)}
-    .content{padding:18px}.content h3{margin:0 0 8px;font-size:1.15rem}.content p{color:#6d7080;font-size:.9rem;line-height:1.5}
-    .meta{font-size:.82rem;font-weight:bold;color:#55596a}.demo{display:inline-block;background:#f0efff;color:#5145bd;padding:5px 8px;border-radius:99px;font-size:.7rem;font-weight:bold;margin-bottom:10px}
-    footer{background:var(--navy);color:#d6d8e3;padding:30px 20px;text-align:center;font-size:.9rem}
-    @media(max-width:760px){.hero{grid-template-columns:1fr;margin-top:40px}.hero-art{min-height:170px}.cards{grid-template-columns:1fr}.section-head{align-items:start;flex-direction:column}header{padding-bottom:60px}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Discover exciting and affordable things to do around Nairobi every weekend.">
+<title>Weekend 254 | Make the Weekend Count</title>
+
+<style>
+:root {
+  --navy:#10152b;
+  --lime:#c7f464;
+  --orange:#ff784f;
+  --purple:#7867f5;
+  --paper:#f7f7f2;
+  --ink:#171a2d;
+  --muted:#77798a;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--paper);
+  color:var(--ink);
+}
+
+header {
+  background:var(--navy);
+  color:white;
+  padding:22px 6% 75px;
+}
+
+nav {
+  max-width:1150px;
+  margin:auto;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.logo {
+  font-size:25px;
+  font-weight:900;
+  letter-spacing:1px;
+}
+
+.logo span { color:var(--lime); }
+
+.nav-tag {
+  border:1px solid #ffffff55;
+  border-radius:30px;
+  padding:9px 14px;
+  font-size:12px;
+}
+
+.hero {
+  max-width:1150px;
+  margin:65px auto 0;
+  display:grid;
+  grid-template-columns:1.4fr .8fr;
+  gap:35px;
+  align-items:center;
+}
+
+.hero h1 {
+  font-size:clamp(45px,8vw,85px);
+  line-height:.95;
+  letter-spacing:-5px;
+  margin:0;
+}
+
+.hero h1 span { color:var(--lime); }
+
+.hero p {
+  color:#d5d7e2;
+  line-height:1.7;
+  max-width:550px;
+  font-size:16px;
+}
+
+.hero-art {
+  background:var(--orange);
+  color:var(--navy);
+  padding:28px;
+  border-radius:25px;
+  min-height:220px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  transform:rotate(2deg);
+}
+
+.hero-art strong {
+  font-size:38px;
+  line-height:1;
+}
+
+.hero-art small {
+  font-weight:bold;
+  letter-spacing:2px;
+}
+
+main {
+  max-width:1150px;
+  margin:-30px auto 70px;
+  padding:0 20px;
+  position:relative;
+}
+
+.filters {
+  background:white;
+  padding:18px;
+  border-radius:17px;
+  display:grid;
+  grid-template-columns:2fr 1fr 1fr;
+  gap:12px;
+  box-shadow:0 10px 35px #10152b12;
+}
+
+input,select {
+  width:100%;
+  padding:13px;
+  border:1px solid #ddd;
+  border-radius:10px;
+  background:white;
+  font-size:14px;
+}
+
+.section-heading {
+  margin:48px 0 20px;
+}
+
+.section-heading h2 {
+  font-size:32px;
+  margin:5px 0;
+  letter-spacing:-1px;
+}
+
+.eyebrow {
+  color:var(--purple);
+  font-weight:bold;
+  font-size:12px;
+  letter-spacing:2px;
+}
+
+.weekend-date {
+  color:var(--muted);
+  font-size:14px;
+}
+
+.notice {
+  background:#fff2d9;
+  border-left:4px solid #e5a329;
+  padding:14px;
+  border-radius:8px;
+  font-size:13px;
+  line-height:1.6;
+  margin-bottom:22px;
+}
+
+.cards {
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+
+.card {
+  background:white;
+  border:1px solid #ececf0;
+  border-radius:17px;
+  overflow:hidden;
+  transition:transform .2s;
+}
+
+.card:hover { transform:translateY(-4px); }
+
+.card-art {
+  height:145px;
+  padding:18px;
+  display:flex;
+  align-items:end;
+  font-size:23px;
+  font-weight:900;
+  color:var(--navy);
+}
+
+.green { background:linear-gradient(135deg,#c7f464,#9dd5a1); }
+.orange { background:linear-gradient(135deg,#ffb08c,#ff784f); }
+.purple { background:linear-gradient(135deg,#bdb5ff,#7867f5); }
+.blue { background:linear-gradient(135deg,#9ce4ee,#65a9db); }
+.yellow { background:linear-gradient(135deg,#ffe48a,#f4b84e); }
+.pink { background:linear-gradient(135deg,#ffb8d0,#ed82ad); }
+
+.card-content { padding:18px; }
+
+.demo-label {
+  display:inline-block;
+  background:#f0efff;
+  color:#5145bd;
+  padding:6px 9px;
+  border-radius:20px;
+  font-size:10px;
+  font-weight:bold;
+  margin-bottom:10px;
+}
+
+.card h3 {
+  margin:0 0 9px;
+  font-size:19px;
+}
+
+.description {
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.6;
+}
+
+.details {
+  border-top:1px solid #eee;
+  margin-top:14px;
+  padding-top:12px;
+  font-size:12px;
+  line-height:2;
+  color:#55596a;
+}
+
+.details strong { color:var(--ink); }
+
+.empty {
+  display:none;
+  text-align:center;
+  padding:35px;
+  background:white;
+  border-radius:15px;
+  color:var(--muted);
+}
+
+footer {
+  background:var(--navy);
+  color:#d5d7e2;
+  padding:35px 20px;
+  text-align:center;
+  font-size:13px;
+  line-height:1.8;
+}
+
+@media(max-width:750px) {
+  .hero { grid-template-columns:1fr; margin-top:45px; }
+  .hero h1 { letter-spacing:-3px; }
+  .hero-art { min-height:170px; }
+  .filters { grid-template-columns:1fr; }
+  .cards { grid-template-columns:1fr; }
+  .section-heading h2 { font-size:27px; }
+}
+</style>
 </head>
+
 <body>
-  <header>
-    <nav><div class="brand">WEEKEND <span>254</span></div><div class="tag">NAIROBI & BEYOND</div></nav>
-    <section class="hero">
-      <div><h1>MAKE THE<br><em>WEEKEND</em><br>COUNT.</h1>
-        <p>Fresh ideas for places to go, things to do and memories to make around Nairobi — without spending a fortune.</p></div>
-      <div class="hero-art"><span>YOUR WEEKEND STARTS HERE ↘</span><strong>GO OUT.<br>EXPLORE.<br>REPEAT.</strong><span>KENYA • 254</span></div>
-    </section>
-  </header>
-  <main>
-    <div class="toolbar">
-      <input id="search" type="search" placeholder="Search activities or areas…" aria-label="Search activities">
-      <select id="category" aria-label="Filter by category"><option value="all">All categories</option><option>Outdoors</option><option>Family</option><option>Food</option><option>Music</option><option>Sports</option></select>
-      <select id="budget" aria-label="Budget filter"><option value="all">Any budget</option><option value="1500">Up to KSh 1,500</option></select>
+
+<header>
+  <nav>
+    <div class="logo">WEEKEND <span>254</span></div>
+    <div class="nav-tag">NAIROBI & BEYOND</div>
+  </nav>
+
+  <section class="hero">
+    <div>
+      <h1>MAKE THE<br><span>WEEKEND</span><br>COUNT.</h1>
+      <p>
+        Discover exciting places, memorable experiences
+        and affordable things to do around Nairobi.
+        Your next adventure starts here!
+      </p>
     </div>
-    <div class="section-head"><div><div class="muted">PLAN SOMETHING GOOD</div><h2 id="weekend">This weekend's shortlist</h2></div><div class="muted">Ideas around Nairobi, outside the CBD</div></div>
-    <div class="notice"><strong>Preview version:</strong> The cards below are demonstration examples, not verified current events or offers. Check official sources before making plans. We'll replace these with researched weekend listings.</div>
-    <section class="cards" id="cards">
-      <article class="card" data-category="Outdoors" data-cost="0"><div class="visual v1">FRESH AIR FIX</div><div class="content"><span class="demo">DEMO LISTING</span><h3>Outdoor escape</h3><p>A sample idea for a nature walk or outdoor day trip. Confirm entry fees, opening hours and conditions.</p><div class="meta">Outdoors · Nairobi area · Price to verify</div></div></article>
-      <article class="card" data-category="Family" data-cost="1500"><div class="visual v2">FAMILY TIME</div><div class="content"><span class="demo">DEMO LISTING</span><h3>Family-friendly outing</h3><p>A sample family activity. Confirm age suitability, tickets and any extra charges with the venue.</p><div class="meta">Family · Nairobi area · Price to verify</div></div></article>
-      <article class="card" data-category="Food" data-cost="1500"><div class="visual v3">GOOD EATS</div><div class="content"><span class="demo">DEMO LISTING</span><h3>Food discovery</h3><p>A sample restaurant or food experience. Menu prices and availability need confirmation.</p><div class="meta">Food · Nairobi area · Price to verify</div></div></article>
-    </section>
-  </main>
-  <footer>© <span id="year"></span> Weekend 254 · Discover more. Spend smart. Enjoy the weekend.</footer>
-  <script>
-    const today=new Date(), day=today.getDay(), toSat=(6-day+7)%7||7;
-    const sat=new Date(today); sat.setDate(today.getDate()+toSat);
-    document.getElementById('weekend').textContent='Weekend of '+sat.toLocaleDateString('en-KE',{day:'numeric',month:'long'});
-    document.getElementById('year').textContent=today.getFullYear();
-    const search=document.getElementById('search'), category=document.getElementById('category'), budget=document.getElementById('budget');
-    function filter(){document.querySelectorAll('.card').forEach(card=>{
-      const text=card.innerText.toLowerCase(), matchText=text.includes(search.value.toLowerCase());
-      const matchCat=category.value==='all'||card.dataset.category===category.value;
-      const matchBudget=budget.value==='all'||Number(card.dataset.cost)<=Number(budget.value);
-      card.style.display=matchText&&matchCat&&matchBudget?'':'none';
-    });}
-    [search,category,budget].forEach(el=>el.addEventListener('input',filter));
-  </script>
+
+    <div class="hero-art">
+      <small>YOUR WEEKEND STARTS HERE</small>
+      <strong>GO OUT.<br>EXPLORE.<br>REPEAT.</strong>
+      <small>KENYA • 254</small>
+    </div>
+  </section>
+</header>
+
+<main>
+
+  <section class="filters">
+    <input id="search" type="search"
+      placeholder="Search activities or locations...">
+
+    <select id="category">
+      <option value="all">All categories</option>
+      <option value="outdoors">Outdoors</option>
+      <option value="family">Family</option>
+      <option value="food">Food & Restaurants</option>
+      <option value="music">Live Music</option>
+      <option value="sports">Sports</option>
+      <option value="cars">Car Events</option>
+      <option value="shopping">Shopping</option>
+    </select>
+
+    <select id="budget">
+      <option value="all">Any budget</option>
+      <option value="1500">Confirmed up to KSh 1,500</option>
+    </select>
+  </section>
+
+  <section class="section-heading">
+    <div class="eyebrow">PLAN SOMETHING GOOD</div>
+    <h2>What's happening this weekend?</h2>
+    <div class="weekend-date" id="weekendDate"></div>
+  </section>
+
+  <div class="notice">
+    <strong>Website preview:</strong>
+    These are demonstration activity ideas, not confirmed events.
+    Prices, dates, times and availability must be verified before
+    activities are published as recommendations.
+  </div>
+
+  <section class="cards" id="activityCards">
+
+    <article class="card" data-category="outdoors" data-budget="">
+      <div class="card-art green">FRESH AIR FIX</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Outdoor Adventures</h3>
+        <p class="description">
+          Discover nature trails, gardens and outdoor experiences
+          around Nairobi.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> Check venue schedule</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Cost:</strong> To be verified</div>
+          <div>🌦️ <strong>Weather:</strong> Check forecast</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="family" data-budget="">
+      <div class="card-art orange">FAMILY TIME</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Family Outings</h3>
+        <p class="description">
+          Find enjoyable activities and experiences suitable
+          for a family day out.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> Check venue schedule</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Cost:</strong> To be verified</div>
+          <div>🌦️ <strong>Weather:</strong> Check forecast</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="food" data-budget="">
+      <div class="card-art purple">GOOD EATS</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Food & Restaurants</h3>
+        <p class="description">
+          Explore interesting restaurants, food spots and
+          dining experiences.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> Check opening hours</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Cost:</strong> Menu to be verified</div>
+          <div>🌦️ <strong>Weather:</strong> Indoor options available</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="music" data-budget="">
+      <div class="card-art blue">LIVE & LOUD</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Live Music</h3>
+        <p class="description">
+          Discover live performances, music shows and
+          entertainment around the city.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> To be confirmed</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Tickets:</strong> To be verified</div>
+          <div>🔗 <strong>Booking:</strong> Coming soon</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="sports" data-budget="">
+      <div class="card-art yellow">GAME ON</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Sports & Recreation</h3>
+        <p class="description">
+          Find sporting events, recreation and activities
+          for active weekends.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> To be confirmed</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Cost:</strong> To be verified</div>
+          <div>🔗 <strong>Details:</strong> Coming soon</div>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-category="cars" data-budget="">
+      <div class="card-art pink">CAR CULTURE</div>
+      <div class="card-content">
+        <span class="demo-label">DEMO LISTING</span>
+        <h3>Car Meets & Events</h3>
+        <p class="description">
+          Explore automotive gatherings, car shows and
+          motoring experiences.
+        </p>
+        <div class="details">
+          <div>📅 <strong>Date:</strong> To be confirmed</div>
+          <div>🕒 <strong>Time:</strong> To be confirmed</div>
+          <div>📍 <strong>Location:</strong> Outside CBD</div>
+          <div>💰 <strong>Entry:</strong> To be verified</div>
+          <div>🔗 <strong>Details:</strong> Coming soon</div>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <div class="empty" id="noResults">
+    <h3>No activities found</h3>
+    <p>Try another search or category.</p>
+  </div>
+
+</main>
+
+<footer>
+  <strong>WEEKEND 254</strong><br>
+  Discover more. Spend smart. Enjoy the weekend.<br>
+  © <span id="year"></span> Weekend 254
+</footer>
+
+<script>
+const today = new Date();
+const day = today.getDay();
+const daysUntilSaturday = (6 - day + 7) % 7 || 7;
+
+const saturday = new Date(today);
+saturday.setDate(today.getDate() + daysUntilSaturday);
+
+const sunday = new Date(saturday);
+sunday.setDate(saturday.getDate() + 1);
+
+const dateOptions = {day:"numeric",month:"long"};
+
+document.getElementById("weekendDate").textContent =
+  "Upcoming weekend: " +
+  saturday.toLocaleDateString("en-KE",dateOptions) +
+  " – " +
+  sunday.toLocaleDateString("en-KE",dateOptions);
+
+document.getElementById("year").textContent =
+  today.getFullYear();
+
+const search = document.getElementById("search");
+const category = document.getElementById("category");
+const budget = document.getElementById("budget");
+const cards = document.querySelectorAll(".card");
+const noResults = document.getElementById("noResults");
+
+function filterActivities() {
+  let visible = 0;
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+
+    const matchesSearch =
+      text.includes(search.value.toLowerCase());
+
+    const matchesCategory =
+      category.value === "all" ||
+      card.dataset.category === category.value;
+
+    const cardBudget = card.dataset.budget;
+
+    const matchesBudget =
+      budget.value === "all" ||
+      (cardBudget !== "" &&
+       Number(cardBudget) <= Number(budget.value));
+
+    const show =
+      matchesSearch && matchesCategory && matchesBudget;
+
+    card.style.display = show ? "" : "none";
+
+    if (show) visible++;
+  });
+
+  noResults.style.display =
+    visible === 0 ? "block" : "none";
+}
+
+search.addEventListener("input",filterActivities);
+category.addEventListener("change",filterActivities);
+budget.addEventListener("change",filterActivities);
+</script>
+
 </body>
 </html>
